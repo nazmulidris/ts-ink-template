@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "module": "ES2020", // Generate ECMAScript modules.
+    "moduleResolution": "Node", // Module resolution for Node.
+    "allowSyntheticDefaultImports": true, // Allow legacy CommonJS modules to be imported.
+    "strict": true, // Enable strict mode in TypeScript.
+    "jsx": "react",
+    "esModuleInterop": true,
+    "outDir": "dist",
+    "sourceMap": true,
+    "target": "ES5", // Allow use of getters.
+    "importHelpers": true, // Needed due to ES5.
+    "forceConsistentCasingInFileNames": true // Needed due to ES5.
+  },
+  "include": ["src"]
+}
