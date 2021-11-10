@@ -20,8 +20,8 @@
     "dist/cli.js"
   ],
   "dependencies": {
+    "commander": "^8.3.0",
     "ink": "^3.2.0",
-    "meow": "^10.0.0",
     "r3bl-ts-utils": "^1.0.1",
     "react": "^17.0.2",
     "tslib": "^2.3.1"

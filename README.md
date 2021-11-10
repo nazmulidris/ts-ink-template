@@ -36,16 +36,25 @@ watch mode (very mich like webpack hot-reload).
 Notes about `start` script:
 
 1. Make sure to mark `dist/cli.js` file as executable so that this self executing module can run.
-2. To pass command line arguments you can use `npm run start -- --name=Grogu`.
-3. You can also run `npm exec -c 'ink-cli-app --name=Grogu'`.
+2. To pass command line arguments you can use:
+
+   - `npm start -- --help`
+   - `npm start -- -n Grogu`
+   - `npm start -- --name Grogu`
+
+3. You can also run the following:
+
+   - `npm exec -c 'ink-cli-app --help'`
+   - `npm exec -c 'ink-cli-app -n Grogu'`
+   - `npm exec -c 'ink-cli-app --name Grogu'`
 
 #### Watch mode scripts (hot-reload)
 
-| Task                          | Script        | Notes                                                                                          |
-| ----------------------------- | ------------- | ---------------------------------------------------------------------------------------------- |
-| Compiling                     | `build-watch` | run`tsc` and watch for changes.                                                                |
-| Compiling and running         | `dev`         | run `nodemon` & watch for changes in `ts`, `tsx`, `json` files; run `build-and-run` on change. |
-| Compiling and running forever | `run.fish`    | run `forever` to run the `dev` script & restart it when it fails.                              |
+| Task                  | Script        | Notes                                                                                          |
+| --------------------- | ------------- | ---------------------------------------------------------------------------------------------- |
+| Compile               | `build-watch` | run`tsc` and watch for changes.                                                                |
+| Compile & run         | `dev`         | run `nodemon` & watch for changes in `ts`, `tsx`, `json` files; run `build-and-run` on change. |
+| Compile & run forever | `run.fish`    | run `forever` to run the `dev` script & restart it when it fails.                              |
 
 ### npm link
 
