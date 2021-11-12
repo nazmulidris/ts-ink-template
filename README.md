@@ -12,6 +12,7 @@
 - [IDEA Run Configurations](#idea-run-configurations)
 - [How to update the template](#how-to-update-the-template)
 - [ESM, r3bl-ts-utils, and React](#esm-r3bl-ts-utils-and-react)
+- [CommonJS, ESM, r3bl-ts-utils, and React](#commonjs-esm-r3bl-ts-utils-and-react)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -114,28 +115,19 @@ git pull template main
 
 ## ESM, r3bl-ts-utils, and React
 
-> ⚡ Resources on ESM and CommonJS and their interop issues.
->
-> 1. [Using native ESM on Node.js using TypeScript][e-2]
-> 2. [Understanding ESM and CommonJS, and creating "dual" package that supports both][e-3]
-> 3. [Node.js, TypeScript, and ESM and writing dual mode modules][e-1]
+## CommonJS, ESM, r3bl-ts-utils, and React
+
+This node module is compiled to CommonJS (as specified in [`tsconfig.json`](tsconfig.json)) and not
+ESM. Here's more information on CommonJS, ESM, and hybrid modules.
+
+- [How to create dual modules][e-1].
+- [Example of a dual module][e-2].
+- Here's a [commit][e-3] from `r3bl-ts-utils` that applied a fix related to modules.
 
 <!-- prettier-ignore-start -->
 
-[e-1]: https://gils-blog.tayar.org/posts/using-jsm-esm-in-nodejs-a-practical-guide-part-1/
-[e-2]: https://2ality.com/2021/06/typescript-esm-nodejs.html
-[e-3]: https://redfin.engineering/node-modules-at-war-why-commonjs-and-es-modules-cant-get-along-9617135eeca1
+[e-1]: https://www.sensedeep.com/blog/posts/2021/how-to-create-single-source-npm-module.html
+[e-2]: https://github.com/sensedeep/dynamodb-onetable
+[e-3]: https://github.com/r3bl-org/r3bl-ts-utils/commit/a2e1465c8ab0319c5622c8a1a2b9acc634134099
 
 <!-- prettier-ignore-end -->
-
-If you write React components that use any of the custom hooks imported from `r3bl-ts-utils` then
-there will be problems. This is due to the fact that this Ink node module uses ESM and
-`r3bl-ts-utils` uses CommonJS, that causes some big problems! The symbol `React` is actually
-exported under the covers when TS code is generated into JS code in `r3bl-ts-utils` and that simply
-fails in this node module which uses ESM. This is a sad side effect of using ESM which are
-incompatible with CommonJS. For now, avoiding importing `useForceUpdateFn()` function side steps
-this issue.
-
-> Since `r3bl-ts-utils` is used for "regular" React apps built using `create-react-app` it doesn't
-> make sense to use ESM for it. It needs to be as universal as possible and currently CommonJS
-> provides that flexibility.
