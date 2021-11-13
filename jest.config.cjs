@@ -41,13 +41,6 @@ module.exports = {
   testEnvironment: "node", // Execution environment (can't be `ts-node`).
   testMatch: ["<rootDir>/**/*.test.ts"], // Test files must end in `*.test.ts`.
   testPathIgnorePatterns: ["/node_modules/"], // Don't search for tests inside `node_modules`.
-
-  extensionsToTreatAsEsm: [".ts"], // ESM Support for ts-jest.
-  globals: {
-    "ts-jest": {
-      useESM: true,
-    },
-  },
   moduleNameMapper: {
     "^(\\.{1,2}/.*)\\.js$": "$1",
   },
