@@ -17,7 +17,7 @@
 import React from "react"
 import chalk from "chalk"
 import { render } from "ink-testing-library"
-import App from "../ui.js"
+import App from "../ui"
 
 describe("my test suite", () => {
   test("a spec with an expectation", () => {

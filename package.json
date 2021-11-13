@@ -12,7 +12,8 @@
     "start": "dist/cli.js",
     "build-and-start": "npm run build && dist/cli.js",
     "pretest": "npm run build",
-    "test": "jest",
+    "test": "jest --config jestconfig.json",
+    "test-watch": "jest --config jestconfig.json --watch",
     "start-watch": "nodemon --exitcrash -e ts,tsx,js,jsx --exec 'node dist/cli.js || exit 1'",
     "dev": "npm-run-all -p -r build-watch start-watch"
   },
