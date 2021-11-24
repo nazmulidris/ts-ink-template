@@ -7,8 +7,8 @@
     "node": ">=10"
   },
   "scripts": {
-    "build": "tsc",
-    "build-watch": "tsc --watch",
+    "build": "rm -rf dist/ && tsc && chmod +x dist/cli.js",
+    "build-watch": "rm -rf dist/ && tsc --watch",
     "start": "dist/cli.js",
     "build-and-start": "npm run build && dist/cli.js",
     "pretest": "npm run build",
@@ -24,7 +24,7 @@
     "chalk": "^4.1.2",
     "commander": "^8.3.0",
     "ink": "^3.2.0",
-    "r3bl-ts-utils": "^1.0.5",
+    "r3bl-ts-utils": "^1.0.16",
     "react": "^17.0.2",
     "tslib": "^2.3.1"
   },
@@ -32,6 +32,10 @@
     "@sindresorhus/tsconfig": "^2.0.0",
     "@types/jest": "^27.0.2",
     "@types/react": "^17.0.34",
+    "eslint": "latest",
+    "eslint-loader": "latest",
+    "@typescript-eslint/parser": "latest",
+    "@typescript-eslint/eslint-plugin": "latest",
     "eslint-plugin-react": "^7.27.0",
     "eslint-plugin-react-hooks": "^4.3.0",
     "ink-testing-library": "^2.1.0",

@@ -1,0 +1,19 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking"
+  ],
+  "overrides": [
+    {
+      // Your TypeScript files extension
+      "files": ["*.ts", "*.tsx"],
+      "parserOptions": {
+        // Specify it only for TypeScript files
+        "project": ["./tsconfig.json"]
+      }
+    }
+  ]
+}
