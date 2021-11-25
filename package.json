@@ -8,14 +8,15 @@
   },
   "scripts": {
     "build": "rm -rf dist/ && tsc && chmod +x dist/cli.js",
-    "build-watch": "rm -rf dist/ && tsc --watch",
+    "build-watch": "tsc --watch",
     "start": "dist/cli.js",
     "build-and-start": "npm run build && dist/cli.js",
     "pretest": "npm run build",
-    "test": "jest --config jestconfig.json",
-    "test-watch": "jest --config jestconfig.json --watch",
+    "test": "jest",
+    "test-watch": "jest --watch",
     "start-watch": "nodemon --exitcrash -e ts,tsx,js,jsx --exec 'node dist/cli.js || exit 1'",
-    "dev": "npm-run-all -p -r build-watch start-watch"
+    "dev": "npm run build && npm-run-all -p -r build-watch start-watch",
+    "lint": "eslint '**/src/**/*.{ts,tsx}' --quiet --fix"
   },
   "files": [
     "dist/cli.js"
@@ -36,8 +37,8 @@
     "eslint-loader": "latest",
     "@typescript-eslint/parser": "latest",
     "@typescript-eslint/eslint-plugin": "latest",
-    "eslint-plugin-react": "^7.27.0",
-    "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint-plugin-react": "latest",
+    "eslint-plugin-react-hooks": "latest",
     "ink-testing-library": "^2.1.0",
     "jest": "^27.3.1",
     "nodemon": "^2.0.15",
