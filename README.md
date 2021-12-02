@@ -5,8 +5,9 @@
 
 - [What is this?](#what-is-this)
 - [npm scripts](#npm-scripts)
-  - [One off scripts](#one-off-scripts)
-  - [Watch mode scripts (hot-reload)](#watch-mode-scripts-hot-reload)
+  - [Development using tsm (skip compilation)](#development-using-tsm-skip-compilation)
+  - [Traditional approach (compile TS and run JS)](#traditional-approach-compile-ts-and-run-js)
+  - [start script](#start-script)
 - [npm link](#npm-link)
   - [How do I change the name of the CLI app?](#how-do-i-change-the-name-of-the-cli-app)
 - [IDEA Run Configurations](#idea-run-configurations)
@@ -24,37 +25,35 @@ IDEA Run Configurations shown below.
 
 ## npm scripts
 
-There are two sets of scripts, ones that just run a command once, and others that start them in
-watch mode (very mich like webpack hot-reload). To run any of the following scripts you can execute
-`npm run <SCRIPT_NAME>`.
+There are two types of scripts provided - one using [`tsm`](https://www.npmjs.com/package/tsm) to
+quickly run TypeScript code w/out having to compile it first, and the other using the traditional
+build, test, and run approach.
 
-### One off scripts
+To run any of the following scripts you can execute `npm run <SCRIPT_NAME>`.
 
-| Task                     | Script            | Notes                                                 |
-| ------------------------ | ----------------- | ----------------------------------------------------- |
-| Compiling                | `build`           | run`tsc` to generate JS files in the `dist` folder    |
-| Running (no compilation) | `start`           | run the `dist/cli.js` file (make sure its executable) |
-| Compiling and running    | `build-and-start` | run the `build` script, then the `dist/cli.js` file   |
-| Run tests                | `test`            | run all the Jest tests (no need for compiling)        |
+### Development using tsm (skip compilation)
 
-Notes about `start` script:
+<!-- prettier-ignore-start -->
+| Task              | Script            | Notes                                                        |
+|-------------------|-------------------|--------------------------------------------------------------|
+| Run               | `start-dev`       | Run the `dist/cli.tsx` file                                  |
+| Run & watch       | `start-dev-watch` | Watch for changes and re-run the `dist/cli.tsx` file         |
+| Run tests         | `test`            | Run all the Jest tests (no need for compiling)               |
+| Run tests & watch | `test-watch`      | Run all the Jest tests in watch mode (no need for compiling) |
+| Run linter        | `lint`            | Run ESLint.                                                  |
+<!-- prettier-ignore-end -->
 
-1. Make sure to mark `dist/cli.js` file as executable so that this self executing module can run.
-2. To pass command line arguments you can use `npm run start -- <STUFF>`
-3. You can also run `npm exec -c 'ink-cli-app <STUFF>'`.
-4. Where `<STUFF>` can be:
+### Traditional approach (compile TS and run JS)
 
-- `--help`
-- `-n Grogu`
-- `--name Grogu`
-
-### Watch mode scripts (hot-reload)
-
-| Task              | Script        | Notes                                                                                         |
-| ----------------- | ------------- | --------------------------------------------------------------------------------------------- |
-| Compile and watch | `build-watch` | run`tsc` and watch for changes                                                                |
-| Run and watch     | `start-watch` | run `nodemon` & watch for changes in `ts`, `tsx`, `json` files; run `build-and-run` on change |
-| All of the above  | `dev`         | Run the scripts above in parallel using `npm-run-all`                                         |
+<!-- prettier-ignore-start -->
+| Task                | Script           | Notes                                                  |
+|---------------------|------------------|--------------------------------------------------------|
+| Run (w/out compile) | `start`          | Run the `dist/cli.js` file (make sure its executable)  |
+| Compile             | `build`          | Run`tsc` to generate JS files in the `dist` folder     |
+| Compile & watch     | `build-watch-js` | run `tsc` and watch for changes in TS files            |
+| Run & watch         | `start-watch-js` | Watch for changes in JS files, and re-run              |
+| Compile, run, watch | `dev-js`         | Run both scripts above in parallel using `npm-run-all` |
+<!-- prettier-ignore-end -->
 
 Here are some notes on how all the watching tasks work.
 
@@ -66,12 +65,21 @@ Here are some notes on how all the watching tasks work.
    a terminal.
 
 <!-- prettier-ignore-start -->
-
 [w-1]: https://nicedoc.io/remy/nodemon/blob/master/faq.md#error-process-failed-unhandled-exit-code-2
 [w-2]: https://remysharp.com/2018/01/08/a-clean-exit#changing-exit-codes
 [w-3]: https://github.com/mysticatea/npm-run-all
-
 <!-- prettier-ignore-end -->
+
+### start script
+
+1. Make sure to mark `dist/cli.js` file as executable so that this self executing module can run.
+2. To pass command line arguments you can use `npm run start -- <STUFF>`
+3. You can also run `npm exec -c 'ink-cli-app <STUFF>'`.
+4. Where `<STUFF>` can be:
+
+- `--help`
+- `-n Grogu`
+- `--name Grogu`
 
 ## npm link
 
@@ -125,9 +133,7 @@ ESM. Here's more information on CommonJS, ESM, and hybrid modules.
 - Here's a [commit][e-3] from `r3bl-ts-utils` that applied a fix related to modules.
 
 <!-- prettier-ignore-start -->
-
 [e-1]: https://www.sensedeep.com/blog/posts/2021/how-to-create-single-source-npm-module.html
 [e-2]: https://github.com/sensedeep/dynamodb-onetable
 [e-3]: https://github.com/r3bl-org/r3bl-ts-utils/commit/a2e1465c8ab0319c5622c8a1a2b9acc634134099
-
 <!-- prettier-ignore-end -->
