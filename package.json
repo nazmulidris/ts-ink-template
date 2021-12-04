@@ -8,13 +8,14 @@
   },
   "scripts": {
     "start-dev": "node -r tsm src/cli.tsx",
+    "/*start-dev-watch*/": "https://stackoverflow.com/a/28938235/2085356",
+    "start-dev-watch": "nodemon --exitcrash -e ts,tsx --exec 'echo -e '\\033[0m' && clear && node -r tsm src/cli.tsx || exit 1'",
     "test": "jest",
     "test-watch": "jest --watch",
-    "start-dev-watch": "nodemon --exitcrash -e ts,tsx --exec 'node -r tsm src/cli.tsx || exit 1'",
     "lint": "eslint '**/src/**/*.{ts,tsx}' --quiet --fix",
     "build": "rm -rf dist/ && tsc && chmod +x dist/cli.js",
     "start": "node dist/cli.js",
-    "start-watch-js": "nodemon --exitcrash -e ts,tsx,js,jsx --exec 'node dist/cli.js || exit 1'",
+    "start-watch-js": "nodemon --exitcrash -e ts,tsx,js,jsx --exec 'echo -e '\\033[0m' && clear && node dist/cli.js || exit 1'",
     "build-watch-js": "tsc --watch",
     "dev-js": "npm run build && npm-run-all -p -r build-watch-js start-watch-js"
   },
