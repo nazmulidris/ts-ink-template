@@ -20,8 +20,7 @@
 ## What is this?
 
 This is a template project that makes it easy to work w/ Ink v3 to build [CLI (command line interface) apps](https://developerlife.com/category/CLI/) using Node.js w/
-TypeScript and Jest for testing. Make sure to run `npm install` before running the scripts or the
-IDEA Run Configurations shown below.
+TypeScript and Jest for testing. Make sure to run `npm install` after cloning this template repo on your machine. Both IntelliJ IDEA & VSCode project files are provided, so you can easily open this repo up in both IDEs.
 
 ## npm scripts
 
