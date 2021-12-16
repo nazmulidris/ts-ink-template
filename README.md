@@ -121,8 +121,6 @@ git remote add template https://github.com/nazmulidris/ts-ink-template
 git pull template main
 ```
 
-## ESM, r3bl-ts-utils, and React
-
 ## CommonJS, ESM, r3bl-ts-utils, and React
 
 This node module is compiled to CommonJS (as specified in [`tsconfig.json`](tsconfig.json)) and not
