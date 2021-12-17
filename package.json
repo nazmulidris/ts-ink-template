@@ -23,33 +23,33 @@
     "dist/cli.js"
   ],
   "dependencies": {
-    "chalk": "^4.1.2",
+    "chalk": "^5.0.0",
     "commander": "^8.3.0",
     "ink": "^3.2.0",
-    "r3bl-ts-utils": "^1.0.16",
+    "r3bl-ts-utils": "^1.0.43",
     "react": "^17.0.2",
     "tslib": "^2.3.1"
   },
   "devDependencies": {
     "@sindresorhus/tsconfig": "^2.0.0",
-    "@types/jest": "^27.0.2",
     "@types/react": "^17.0.34",
+    "ink-testing-library": "^2.1.0",
+    "@types/jest": "latest",
     "eslint": "latest",
     "@typescript-eslint/parser": "latest",
     "@typescript-eslint/eslint-plugin": "latest",
     "eslint-plugin-react": "latest",
     "eslint-plugin-react-hooks": "latest",
-    "ink-testing-library": "^2.1.0",
-    "jest": "^27.3.1",
-    "nodemon": "^2.0.15",
-    "npm-run-all": "^4.1.5",
-    "prettier": "^2.4.1",
-    "ts-jest": "^27.0.7",
-    "typescript": "^4.4.4",
-    "@types/lodash": "^4.14.168",
-    "@types/node": "^15.12.2",
-    "@types/node-fetch": "^2.5.10",
-    "ts-node-dev": "^1.1.8",
-    "tsm": "^2.2.1"
+    "jest": "latest",
+    "nodemon": "latest",
+    "npm-run-all": "latest",
+    "prettier": "latest",
+    "ts-jest": "latest",
+    "typescript": "latest",
+    "@types/lodash": "latest",
+    "@types/node": "latest",
+    "@types/node-fetch": "latest",
+    "ts-node-dev": "latest",
+    "tsm": "latest"
   }
 }
