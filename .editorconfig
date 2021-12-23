@@ -311,7 +311,7 @@ ij_properties_key_value_delimiter = equals
 ij_properties_spaces_around_key_value_delimiter = false
 
 [*.proto]
-ij_continuation_indent_size = 4
+ij_continuation_indent_size = 2
 ij_visual_guides = none
 ij_protobuf_keep_blank_lines_in_code = 2
 ij_protobuf_keep_indents_on_empty_lines = false
@@ -449,7 +449,7 @@ ij_typescript_blank_lines_around_field = 0
 ij_typescript_blank_lines_around_field_in_interface = 0
 ij_typescript_blank_lines_around_function = 1
 ij_typescript_blank_lines_around_method = 1
-ij_typescript_blank_lines_around_method_in_interface = 1
+ij_typescript_blank_lines_around_method_in_interface = 0
 ij_typescript_block_brace_style = end_of_line
 ij_typescript_block_comment_add_space = true
 ij_typescript_block_comment_at_first_column = true
@@ -1106,7 +1106,7 @@ ij_markdown_min_lines_around_header = 1
 ij_markdown_min_lines_between_paragraphs = 1
 
 [{*.pb,*.textproto}]
-ij_continuation_indent_size = 4
+ij_continuation_indent_size = 2
 ij_visual_guides = none
 ij_prototext_keep_blank_lines_in_code = 2
 ij_prototext_keep_indents_on_empty_lines = false
