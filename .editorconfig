@@ -44,7 +44,7 @@ ij_haml_keep_indents_on_empty_lines = false
 [*.java]
 ij_continuation_indent_size = 2
 ij_visual_guides = none
-ij_wrap_on_typing = false
+ij_wrap_on_typing = true
 ij_java_align_consecutive_assignments = false
 ij_java_align_consecutive_variable_declarations = false
 ij_java_align_group_field_declarations = false
@@ -275,7 +275,7 @@ ij_java_variable_annotation_wrap = off
 ij_java_visibility = public
 ij_java_while_brace_force = never
 ij_java_while_on_new_line = false
-ij_java_wrap_comments = false
+ij_java_wrap_comments = true
 ij_java_wrap_first_method_in_call_chain = false
 ij_java_wrap_long_lines = false
 
@@ -423,7 +423,7 @@ ij_xml_text_wrap = normal
 [{*.ats,*.cts,*.mts,*.ts}]
 ij_continuation_indent_size = 2
 ij_visual_guides = none
-ij_wrap_on_typing = false
+ij_wrap_on_typing = true
 ij_typescript_align_imports = false
 ij_typescript_align_multiline_array_initializer_expression = true
 ij_typescript_align_multiline_binary_operation = true
@@ -591,7 +591,7 @@ ij_typescript_use_semicolon_after_statement = false
 ij_typescript_var_declaration_wrap = normal
 ij_typescript_while_brace_force = never
 ij_typescript_while_on_new_line = false
-ij_typescript_wrap_comments = false
+ij_typescript_wrap_comments = true
 
 [{*.bash,*.sh,*.zsh}]
 ij_visual_guides = none
@@ -605,7 +605,7 @@ ij_shell_use_unix_line_separator = true
 [{*.cjs,*.js}]
 ij_continuation_indent_size = 2
 ij_visual_guides = none
-ij_wrap_on_typing = false
+ij_wrap_on_typing = true
 ij_javascript_align_imports = false
 ij_javascript_align_multiline_array_initializer_expression = true
 ij_javascript_align_multiline_binary_operation = true
@@ -769,7 +769,7 @@ ij_javascript_use_semicolon_after_statement = false
 ij_javascript_var_declaration_wrap = normal
 ij_javascript_while_brace_force = never
 ij_javascript_while_on_new_line = false
-ij_javascript_wrap_comments = false
+ij_javascript_wrap_comments = true
 
 [{*.ft,*.vm,*.vsl}]
 ij_continuation_indent_size = 2
