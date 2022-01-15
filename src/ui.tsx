@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-import React, { FC } from "react"
 import { Text } from "ink"
+import React, { FC } from "react"
 
 const App: FC<{ name?: string }> = ({ name = "Stranger" }) => (
   <Text>
